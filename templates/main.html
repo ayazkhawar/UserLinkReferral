@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block tiltle %}
+{% endblock tiltle %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {{request.user}}
+    {% else %}
+        <a href="{% url 'signup-view' %}">
+            <button class = "btn btn-primary">Create an Account</button>
+        </a>
+    {% endif %}
+{% endblock content %} 
